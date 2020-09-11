@@ -6,7 +6,8 @@
 <!--数据库配置-->
     <util:properties id="db" location="classpath:DB.properties"/>
 <!--    包扫描-->
-    <context:component-scan base-package="cn.gok.controller"/>
+    <context:component-scan base-package="cn.gok.service.impl"/>
+    <context:component-scan base-package="cn.gok"/>
 <!--    数据源-->
     <bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="c3p0">
         <property name="user" value="#{db.user}"/>
@@ -18,7 +19,7 @@
 <!--    工厂-->
     <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
         <property name="dataSource" ref="c3p0"/>
-        <property name="configLocation" value="MyBatisConfig.xml"/>
+        <property name="configLocation" value="classpath:MyBatisConfig.xml"/>
         <property name="mapperLocations" value="classpath:mappers/*.xml"/>
      </bean>
 <!--    模板-->

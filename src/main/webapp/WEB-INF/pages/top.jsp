@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 
 <!DOCTYPE html>
 <html>
@@ -11,9 +11,9 @@
 
     <title> 报销单管理系统--部门列表 </title>
 
-    <link rel="stylesheet" type="text/css" href="/assets/skin/default_skin/css/theme.css">
-    <link rel="stylesheet" type="text/css" href="/assets/admin-tools/admin-forms/css/admin-forms.css">
-    <link rel="shortcut icon" href="/assets/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/ExpenseManagement/assets/skin/default_skin/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="/ExpenseManagement/assets/admin-tools/admin-forms/css/admin-forms.css">
+    <link rel="shortcut icon" href="/ExpenseManagement/assets/img/favicon.ico">
 </head>
 
 <body class="admin-validation-page" data-spy="scroll" data-target="#nav-spy" data-offset="200">
@@ -28,7 +28,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown menu-merge">
                 <a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown">
-                    <img src="assets/img/avatars/5.jpg" alt="avatar" class="mw30 br64">
+                    <img src="/ExpenseManagement/assets/img/avatars/5.jpg" alt="avatar" class="mw30 br64">
                     <span class="hidden-xs pl15"> 刘备 </span>
                     <span class="caret caret-tp hidden-xs"></span>
                 </a>
@@ -57,7 +57,7 @@
                 <div class="sidebar-widget author-widget">
                     <div class="media">
                         <a class="media-left" href="#">
-                            <img src="assets/img/avatars/3.jpg" class="img-responsive">
+                            <img src="/ExpenseManagement/assets/img/avatars/3.jpg" class="img-responsive">
                         </a>
                         <div class="media-body">
                             <div class="media-author">刘备--总经理</div>

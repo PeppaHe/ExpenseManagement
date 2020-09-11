@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 
 <jsp:include page="top.jsp"/>
 
@@ -22,7 +22,7 @@
                                     <i class="fa fa-trash"></i>
                                 </button>
                                 <button type="button" class="btn btn-default light">
-                                    <i class="fa fa-plus" onclick="javascript:window.location.href='/department/to_add';"></i>
+                                    <i class="fa fa-plus" onclick="javascript:window.location.href='/ExpenseManagement/department/to_add';"></i>
                                 </button>
                             </div>
                         </div>
@@ -62,8 +62,8 @@
                                 <td>${dept.name}</td>
                                 <td>${dept.address}</td>
                                 <td>
-                                    <a href="/department/to_update?sn=${dept.sn}">编辑</a>
-                                    <a href="/department/remove?sn=${dept.sn}">删除</a>
+                                    <a href="/ExpenseManagement/department/to_update?sn=${dept.sn}">编辑</a>
+                                    <a href="/ExpenseManagement/department/remove?sn=${dept.sn}">删除</a>
                                 </td>
                             </tr>
                         </c:forEach>

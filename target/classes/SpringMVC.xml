@@ -9,14 +9,18 @@
 <!--    引入另一个配置文件-->
     <import resource="SpringMVC_Mybatis.xml"/>
 <!--    包扫描-->
-    <context:component-scan base-package="cn.gok.dao"/>
+    <context:component-scan base-package="cn.gok.service.impl"/>
     <context:component-scan base-package="cn.gok.controller"/>
-    <context:component-scan base-package="cn.gok.service"/>
+    <context:component-scan base-package="cn.gok.dao"/>
 <!--    驱动-->
     <mvc:annotation-driven/>
+
 <!--    视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/pages"/>
+        <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <mvc:default-servlet-handler/>
+
 </beans>
