@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+<!--数据库配置-->
+    <util:properties id="db" location="classpath:DB.properties"/>
+<!--    包扫描-->
+    <context:component-scan base-package="cn.gok.controller"/>
+<!--    数据源-->
+    <bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="c3p0">
+        <property name="user" value="#{db.user}"/>
+        <property name="password" value="#{db.password}"/>
+        <property name="jdbcUrl" value="#{db.url}"/>
+        <property name="driverClass" value="#{db.driver}"/>
+    </bean>
+<!--    mybatis配置-->
+<!--    工厂-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+        <property name="dataSource" ref="c3p0"/>
+        <property name="configLocation" value="MyBatisConfig.xml"/>
+        <property name="mapperLocations" value="classpath:mappers/*.xml"/>
+     </bean>
+<!--    模板-->
+    <bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSessionTemplate">
+        <constructor-arg ref="sqlSessionFactory"></constructor-arg>
+    </bean>
+<!--    接口-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" id="mapperScannerConfigurer">
+        <property name="basePackage" value="cn.gok.dao"/>
+    </bean>
+</beans>
