@@ -23,4 +23,11 @@
 
     <mvc:default-servlet-handler/>
 
+<!--    配置拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="cn.gok.global.LoginIntercepter"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
