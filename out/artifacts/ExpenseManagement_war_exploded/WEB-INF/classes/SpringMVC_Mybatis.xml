@@ -21,6 +21,7 @@
         <property name="dataSource" ref="c3p0"/>
         <property name="configLocation" value="classpath:MyBatisConfig.xml"/>
         <property name="mapperLocations" value="classpath:mappers/*.xml"/>
+        <property name="typeAliasesPackage" value="cn.gok.entity"/>
      </bean>
 <!--    模板-->
     <bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSessionTemplate">

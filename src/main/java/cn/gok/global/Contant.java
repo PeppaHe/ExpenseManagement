@@ -1,5 +1,7 @@
 package cn.gok.global;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,13 +10,14 @@ import java.util.List;
  * @create time:2020/9/9 11:43
  * @desc:  状态
  */
+//@Data
 public class Contant {
     //职务
     public static final String POST_STAFF="员工";
     public static final String POST_FM="部门经理";
     public static final String POST_GM="总经理";
     public static final String POST_CASHIER="财务";
-    public List<String> getPost(){
+    public static List<String> getPost(){
         List<String> list = new ArrayList<String>();
         list.add(POST_STAFF);
         list.add(POST_FM);
